@@ -1,0 +1,37 @@
+<!--<resources xmlns:tools="http://schemas.android.com/tools">-->
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="Base.Theme.HazelWeather" parent="Theme.Material3.DayNight.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your light theme here. &ndash;&gt;-->
+<!--        &lt;!&ndash; <item name="colorPrimary">@color/my_light_primary</item> &ndash;&gt;-->
+<!--    </style>-->
+
+<!--    <style name="Theme.HazelWeather" parent="Base.Theme.HazelWeather" />-->
+<!--</resources>-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- Base application theme -->
+<style name="Theme.HazelWeather" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Customize your light theme here -->
+    <item name="colorPrimary">@color/purple</item>
+    <item name="colorPrimaryVariant">@color/purple</item>
+    <item name="android:statusBarColor">@color/purple</item>
+
+    <!-- ✅ Ensure status bar is drawn and visible -->
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    <item name="android:windowLightStatusBar">true</item> <!-- Set to false if using dark mode -->
+
+    <!-- ✅ Ensure navigation bar is visible -->
+    <item name="android:navigationBarColor">@color/black</item>
+
+
+    <!-- ✅ Prevent content from covering status bar -->
+    <item name="android:fitsSystemWindows">true</item>
+</style>
+
+<!-- Main App Theme -->
+<style name="Base.Theme.HazelWeather." parent="Base.Theme.HazelWeather" />
+
+<!-- Bottom Navigation Active Indicator Style -->
+<style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    <item name="android:color">@color/yellow</item>
+</style>
+</resources>
