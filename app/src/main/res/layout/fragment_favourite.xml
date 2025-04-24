@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No favorites yet"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:visibility="gone"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -33,139 +33,7 @@
         android:layout_marginStart="8dp" />
 </FrameLayout>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="8dp"-->
-<!--        app:cardCornerRadius="16dp"-->
-<!--        app:cardElevation="6dp"-->
-<!--        android:backgroundTint="@android:color/black">-->
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:padding="16dp">-->
-
-<!--            &lt;!&ndash; Date &ndash;&gt;-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/iv_wind_icon2"-->
-<!--                android:layout_width="20dp"-->
-<!--                android:layout_height="20dp"-->
-<!--                android:src="@drawable/location" android:layout_marginStart="5dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/tv_date"-->
-<!--                app:layout_constraintStart_toEndOf="@+id/tv_date"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/tv_date"-->
-<!--                app:layout_constraintVertical_bias="0.0" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv_date"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Faisalabad"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="16sp"-->
-<!--                android:textStyle="bold"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            &lt;!&ndash; Main Weather Icon &ndash;&gt;-->
-<!--            <ImageView-->
-<!--                android:id="@+id/iv_main_weather_icon"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="90dp"-->
-<!--                android:src="@drawable/drizzle"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="@id/tv_date" />-->
-
-<!--            &lt;!&ndash; Weather Condition &ndash;&gt;-->
-<!--            <TextView-->
-<!--                android:id="@+id/tv_weather_condition"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="8dp"-->
-<!--                android:text="clear sky"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/tv_date" />-->
-
-<!--            &lt;!&ndash; Temperature &ndash;&gt;-->
-<!--            <TextView-->
-<!--                android:id="@+id/tv_temperature"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="4dp"-->
-<!--                android:text="23.13 °C"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="24sp"-->
-<!--                android:textStyle="bold"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/tv_weather_condition" />-->
-
-<!--            &lt;!&ndash; Wind Section &ndash;&gt;-->
-<!--            <ImageView-->
-<!--                android:id="@+id/iv_wind_icon"-->
-<!--                android:layout_width="20dp"-->
-<!--                android:layout_height="20dp"-->
-<!--                android:layout_marginTop="12dp"-->
-<!--                android:src="@drawable/wind"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/tv_temperature" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv_wind"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="4dp"-->
-<!--                android:text="4.73"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                app:layout_constraintStart_toEndOf="@id/iv_wind_icon"-->
-<!--                app:layout_constraintTop_toTopOf="@id/iv_wind_icon" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv_wind_label"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="2dp"-->
-<!--                android:text=" Wind Speed"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="12sp"-->
-<!--                app:layout_constraintStart_toEndOf="@id/tv_wind"-->
-<!--                app:layout_constraintTop_toTopOf="@id/tv_wind" />-->
-
-
-<!--            <ImageView-->
-<!--                android:id="@+id/iv_humidity_icon"-->
-<!--                android:layout_width="20dp"-->
-<!--                android:layout_height="20dp"-->
-<!--                android:layout_marginStart="32dp"-->
-<!--                android:src="@drawable/humidity"-->
-<!--                app:layout_constraintStart_toEndOf="@id/tv_wind_label"-->
-<!--                app:layout_constraintTop_toTopOf="@id/iv_wind_icon" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv_humidity"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="4dp"-->
-<!--                android:text="24"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                app:layout_constraintStart_toEndOf="@id/iv_humidity_icon"-->
-<!--                app:layout_constraintTop_toTopOf="@id/iv_humidity_icon" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv_humidity_label"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="2dp"-->
-<!--                android:text=" Humidity"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="12sp"-->
-<!--                app:layout_constraintStart_toEndOf="@id/tv_humidity"-->
-<!--                app:layout_constraintTop_toTopOf="@id/tv_humidity" />-->
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--    </androidx.cardview.widget.CardView>-->
 
 
 
