@@ -39,40 +39,40 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
 
     }
-    override fun onStart() {
-        super.onStart()
-        Log.d("LifecycleCheck", "onStart called")
-        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("LifecycleCheck", "onResume called")
-        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("LifecycleCheck", "onPause called")
-        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("LifecycleCheck", "onStop called")
-        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("LifecycleCheck", "onRestart called")
-        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("LifecycleCheck", "onDestroy called")
-        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show()
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        Log.d("LifecycleCheck", "onStart called")
+//        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        Log.d("LifecycleCheck", "onResume called")
+//        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        Log.d("LifecycleCheck", "onPause called")
+//        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        Log.d("LifecycleCheck", "onStop called")
+//        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onRestart() {
+//        super.onRestart()
+//        Log.d("LifecycleCheck", "onRestart called")
+//        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        Log.d("LifecycleCheck", "onDestroy called")
+//        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show()
+//    }
 
 }

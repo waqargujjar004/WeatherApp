@@ -30,8 +30,7 @@ object AppModule {
             DatabaseModule.provideDatabase(context)
         )
 
-        // Get WeatherApi from the NetworkModule
-       // val weatherApi = NetworkModule.provideWeatherApi()
+
 
         // Provide Local and Remote Data Sources
         val localDataSource = LocalDataSourceModule.provideLocalDataSource(weatherDao)

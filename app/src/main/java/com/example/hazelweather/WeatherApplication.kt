@@ -35,9 +35,8 @@ class WeatherApplication : Application() {
         val workRequest = PeriodicWorkRequestBuilder<WeatherUpdateWorker>(
             1, TimeUnit.HOURS // runs every 6 hours
         )
-//        val workRequest = PeriodicWorkRequestBuilder<WeatherUpdateWorker>(
-//            15, TimeUnit.MINUTES // ✅ Minimum allowed interval
-//        )
+
+
             .setConstraints(constraints)
             .build()
 

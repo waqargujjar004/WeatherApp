@@ -10,6 +10,6 @@ class WeatherDiffCallback  : BaseDiffUtils<weather>(){
 
     override fun areContentsTheSame(oldItem: weather, newItem:weather): Boolean {
            return oldItem.isEqual(newItem)  // Compare full object data
-//        return oldItem == newItem
+
     }
 }

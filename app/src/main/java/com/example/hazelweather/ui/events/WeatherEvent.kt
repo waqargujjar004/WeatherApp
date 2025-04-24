@@ -7,5 +7,5 @@ sealed class WeatherEvent {
     data class SaveWeather(val weather: weather) : WeatherEvent()
     data class CheckFavoriteStatus(val cityName: String) : WeatherEvent()
     data class DeleteWeather(val weather: weather) : WeatherEvent()
-   // object LoadSavedWeathers : WeatherEvent()
+
 }
