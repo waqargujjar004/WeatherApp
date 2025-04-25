@@ -10,7 +10,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:text="Favourites"
-        android:textColor="@color/purple"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />
     <TextView
