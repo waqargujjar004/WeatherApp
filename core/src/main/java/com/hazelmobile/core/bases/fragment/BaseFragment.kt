@@ -71,8 +71,8 @@ abstract class BaseFragment<Binding : ViewBinding>(
             binding?.run {
 
                 bindViews()
-                bindListeners()
                 bindObservers()
+                bindListeners()
 
                 loadData()
 

@@ -111,6 +111,7 @@ class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(FragmentFavouri
             ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(it.recyclerFavourites)
         }
     }
+
 }
 
 

@@ -26,6 +26,8 @@ import kotlin.math.roundToInt
 
 
 
+
+
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     private lateinit var weatherViewModel: WeatherViewModel
@@ -209,7 +211,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
-
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                checkLocationPermissionAndFetchWeather() // 👈 Trigger location fetch after permission is granted
+            } else {
+                showToast("Location permission denied")
+            }
+        }
+    }
 }
 
 private fun getWeatherIcon(main: String): Int {
