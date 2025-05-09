@@ -47,7 +47,7 @@
             android:id="@+id/editText2"
             android:layout_width="300dp"
             android:layout_height="48dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="13dp"
             android:background="@drawable/rounded_edittext"
             android:drawableStart="@drawable/baseline_search_24"
             android:hint="Search city"
@@ -214,7 +214,7 @@
         <View
             android:id="@+id/viewFeelsLike"
             android:layout_width="0dp"
-            android:layout_height="110dp"
+            android:layout_height="95dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_main_card"
             app:layout_constraintStart_toStartOf="parent"
@@ -263,7 +263,7 @@
         <View
             android:id="@+id/viewWindSpeed"
             android:layout_width="0dp"
-            android:layout_height="110dp"
+            android:layout_height="95dp"
             android:background="@drawable/bg_main_card"
             app:layout_constraintStart_toEndOf="@id/viewFeelsLike"
             app:layout_constraintTop_toTopOf="@+id/viewFeelsLike"
@@ -314,7 +314,7 @@
         <View
             android:id="@+id/viewHumidity"
             android:layout_width="0dp"
-            android:layout_height="110dp"
+            android:layout_height="95dp"
             android:background="@drawable/bg_main_card"
             app:layout_constraintTop_toTopOf="@+id/viewFeelsLike"
             app:layout_constraintBottom_toBottomOf="@id/viewFeelsLike"
@@ -371,7 +371,7 @@
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="0dp" />
+            android:layout_marginBottom="1dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
