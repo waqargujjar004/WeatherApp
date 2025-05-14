@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name=".WeatherApplication"
         android:allowBackup="true"
@@ -17,6 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HazelWeather"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.FirebaseEventActivity"
+            android:exported="false"
+            android:label="@string/title_activity_firebase_event"
+            android:theme="@style/Theme.HazelWeather" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">

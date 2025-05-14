@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- GridLayout for buttons -->
+    <GridLayout
+        android:id="@+id/buttonGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:useDefaultMargins="true">
+
+        <!-- Button 1 -->
+        <Button
+            android:id="@+id/buttonOption1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:textColor="@color/white"
+            android:backgroundTint="#D6D5D4"
+            android:text="Option 1" />
+
+        <!-- Button 2 -->
+        <Button
+            android:id="@+id/buttonOption2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:textColor="@color/white"
+            android:backgroundTint="#D6D5D4"
+            android:text="Option 2" />
+
+        <!-- Button 3 -->
+        <Button
+            android:id="@+id/buttonOption3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:textColor="@color/white"
+            android:backgroundTint="#D6D5D4"
+            android:text="Option 3" />
+
+        <!-- Button 4 -->
+        <Button
+            android:id="@+id/buttonOption4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:textColor="@color/white"
+            android:backgroundTint="#D6D5D4"
+            android:text="Option 4" />
+
+        <!-- Button 5 -->
+        <Button
+            android:id="@+id/buttonOption5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:textColor="@color/white"
+            android:backgroundTint="#D6D5D4"
+            android:text="Option 5" />
+    </GridLayout>
+
+    <!-- Description Text -->
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please select one or more options."
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black" />
+
+    <!-- EditText for User Input -->
+    <EditText
+        android:id="@+id/userInputField"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint="Enter your text here"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:gravity="start|top"
+        android:background="@drawable/rounded_edittext" />
+
+    <!-- Done Button -->
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/dark_purple"
+        android:text="Done" />
+
+</LinearLayout>

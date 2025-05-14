@@ -1,46 +1,50 @@
 package com.example.hazelweather.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.work.Constraints
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.NetworkType
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
 import com.example.hazelweather.R
+import com.example.hazelweather.databinding.ActivityFirebaseEventBinding
 import com.example.hazelweather.databinding.ActivityMainBinding
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import com.hazelmobile.core.bases.activity.BaseActivity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.util.concurrent.TimeUnit
 
-class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+class FirebaseEventActivity : BaseActivity<ActivityFirebaseEventBinding>(ActivityFirebaseEventBinding::inflate) {
     private lateinit var firebaseAnalytics: FirebaseAnalytics
     override fun onViewBindingCreated(savedInstanceState: Bundle?) {
         super.onViewBindingCreated(savedInstanceState)
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.weatherNavHostFragment) as NavHostFragment
-        val navController = navHostFragment.navController
 
-        binding.bottomNavigationView.setupWithNavController(navController)
+
+
+        val showBottomSheetButton = findViewById<Button>(R.id.btnTriggerEvent)
+
+        showBottomSheetButton.setOnClickListener {
+            // Show the BottomSheet when the button is clicked
+            showBottomSheet()
+        }
+
+
+
+
+
+
+
+
 // Firebase
 
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
@@ -49,15 +53,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val crashButton = Button(this)
         crashButton.text = "Test Crash"
         crashButton.setOnClickListener {
-//            FirebaseAnalytics.getInstance(this).logEvent("button_click", null)
-//            throw RuntimeException("Test Crash") // Force a crash
-            val intent = Intent(this, FirebaseEventActivity::class.java)
-            startActivity(intent)
+            FirebaseAnalytics.getInstance(this).logEvent("button_click", null)
+            throw RuntimeException("Test Crash") // Force a crash
         }
 
-        addContentView(crashButton, ViewGroup.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT))
+        addContentView(
+            crashButton, ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+        )
         val bundle = Bundle().apply {
             putString("use14gmail", "user@example.com")
             putString("feedback_description", "I love your app!")
@@ -67,7 +72,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
         val abundle = Bundle().apply {
             putString("w4g_email", "hazel@mobile.com")
-            putString("feedback_description", "I love your app! The design is clean, and everything works smoothly. Great job!")
+            putString(
+                "feedback_description",
+                "I love your app! The design is clean, and everything works smoothly. Great job!"
+            )
         }
         firebaseAnalytics.logEvent("WAQAR", abundle)
         val configSettings = remoteConfigSettings {
@@ -138,40 +146,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             }
 
     }
-//    override fun onStart() {
-//        super.onStart()
-//        Log.d("LifecycleCheck", "onStart called")
-//        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show()
-//    }
-//
-//    override fun onResume() {
-//        super.onResume()
-//        Log.d("LifecycleCheck", "onResume called")
-//        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show()
-//    }
-//
-//    override fun onPause() {
-//        super.onPause()
-//        Log.d("LifecycleCheck", "onPause called")
-//        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show()
-//    }
-//
-//    override fun onStop() {
-//        super.onStop()
-//        Log.d("LifecycleCheck", "onStop called")
-//        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show()
-//    }
-//
-//    override fun onRestart() {
-//        super.onRestart()
-//        Log.d("LifecycleCheck", "onRestart called")
-//        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show()
-//    }
-//
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        Log.d("LifecycleCheck", "onDestroy called")
-//        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show()
-//    }
-
+    // Method to show the BottomSheetFragment
+    private fun showBottomSheet() {
+        val bottomSheetFragment = MyBottomSheetFragment() // Your BottomSheetFragment class
+        bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
+    }
 }
+
+
