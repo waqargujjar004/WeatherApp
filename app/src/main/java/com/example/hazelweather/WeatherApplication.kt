@@ -9,6 +9,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.example.hazelweather.di.AppModule
 import com.example.hazelweather.ui.WeatherUpdateWorker
+import com.google.firebase.FirebaseApp
 import java.util.concurrent.TimeUnit
 
 class WeatherApplication : Application() {
@@ -16,6 +17,7 @@ class WeatherApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        FirebaseApp.initializeApp(this)
         // Initialize the AppModule
         AppModule.initialize(this)
         setupWeatherWorker()

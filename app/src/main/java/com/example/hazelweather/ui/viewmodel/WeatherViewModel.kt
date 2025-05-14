@@ -10,6 +10,7 @@ import com.example.hazelweather.domain.usecases.usecaseinterface.SaveWeatherUseC
 import com.example.hazelweather.ui.events.WeatherEvent
 import com.example.hazelweather.ui.state.WeatherState
 import com.example.hazelweather.util.NetworkHelper
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.hazelmobile.cores.bases.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -46,7 +47,8 @@ class WeatherViewModel(
     }
 
     private fun fetchWeather(city: String) {
-
+        FirebaseCrashlytics.getInstance().setCustomKey("searched_city", city)
+        FirebaseCrashlytics.getInstance().log("Fetching weather for city: $city")
 
         viewModelScope.launch(Dispatchers.IO) {
             if (!networkHelper.hasInternetConnection()) {

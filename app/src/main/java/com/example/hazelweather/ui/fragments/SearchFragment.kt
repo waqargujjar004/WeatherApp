@@ -23,6 +23,7 @@ import com.example.hazelweather.ui.viewmodel.WeatherViewModelFactory
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.hazelmobile.cores.bases.fragment.BaseFragment
 import kotlinx.coroutines.launch
 import java.util.Locale
@@ -67,6 +68,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding
     }
 
     private fun setupSearchListener() {
+        FirebaseCrashlytics.getInstance().log("Search button clicked with city")
+
         binding?.editText2?.setOnEditorActionListener { _, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE ||
                 (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)
